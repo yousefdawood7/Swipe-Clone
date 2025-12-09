@@ -4,8 +4,9 @@
   "description": "",
   "source": "index.html",
   "scripts": {
-    "sass:watch": "sass sass:css --watch",
-    "sass:build": "sass sass:css --style=compressed"
+    "start": "parcel start",
+    "build": "parcel build"
+
   },
   "author": "",
   "license": "ISC",
