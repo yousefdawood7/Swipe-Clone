@@ -1,0 +1,68 @@
+@use "../abstract/mixins" as m;
+@use "../abstract/functions" as f;
+
+// Layout Utilities
+.two-column {
+  @include m.flexEl(row, flex-start);
+  width: 100%;
+
+  & > {
+    .col--left,
+    .col--right {
+      width: 50%;
+      gap: 2.5rem;
+      @include m.flexEl(column, center, flex-start);
+    }
+  }
+}
+
+.max-width {
+  width: 100%;
+  max-width: 114.4rem;
+
+  @include m.mQuery(75rem) {
+    padding: 0 1rem;
+  }
+
+  // @include m.mQuery(62.5rem) {
+  //   max-width: 85rem;
+  // }
+
+  // @include m.mQuery(55rem) {
+  //   max-width: 75rem;
+  // }
+
+  // @include m.mQuery(40rem) {
+  //   max-width: 60rem;
+  // }
+}
+
+// Textual Utilities
+a {
+  color: f.getColor("primary-color");
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: f.getColor("primary-font");
+  }
+}
+
+.subtitle {
+  &--1,
+  &--2 {
+    font-weight: 500;
+    font-family: f.getFont("secondary");
+    font-size: 1.7rem;
+    color: f.getColor("primary-color");
+  }
+
+  &--2 {
+    color: f.getColor("tertiary-color");
+  }
+}
+
+.secondary-text {
+  font-size: 1.5rem;
+  color: f.getColor("font-gray");
+  letter-spacing: 0.25px;
+}

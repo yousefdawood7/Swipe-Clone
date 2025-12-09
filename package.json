@@ -1,0 +1,17 @@
+{
+  "name": "stripe-clone",
+  "version": "1.0.0",
+  "description": "",
+  "source": "index.html",
+  "scripts": {
+    "sass:watch": "sass sass:css --watch",
+    "sass:build": "sass sass:css --style=compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.3",
+    "dart-sass": "^1.25.0",
+    "parcel": "^2.16.3"
+  }
+}

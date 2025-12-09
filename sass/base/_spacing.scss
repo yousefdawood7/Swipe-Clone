@@ -1,0 +1,112 @@
+@use 'sass:map';
+@use '../abstract/variables' as v;
+
+$spacing: (
+  'padding': (
+    'prefix': 'p',
+    'values': (
+      'sm': v.$base-padding * 2,
+      'lg': v.$base-padding * 4,
+      'xl': v.$base-padding * 8,
+      'xll': v.$base-padding * 16,
+    ),
+  ),
+
+  'padding-left': (
+    'prefix': 'pl',
+    'values': (
+      'sm': v.$base-padding * 2,
+      'lg': v.$base-padding * 4,
+      'xl': v.$base-padding * 8,
+      'xll': v.$base-padding * 16,
+    ),
+  ),
+
+  'padding-top': (
+    'prefix': 'pt',
+    'values': (
+      'sm': v.$base-padding * 2,
+      'lg': v.$base-padding * 4,
+      'xl': v.$base-padding * 8,
+      'xll': v.$base-padding * 16,
+    ),
+  ),
+
+  'padding-right': (
+    'prefix': 'pr',
+    'values': (
+      'sm': v.$base-padding * 2,
+      'lg': v.$base-padding * 4,
+      'xl': v.$base-padding * 8,
+      'xll': v.$base-padding * 16,
+    ),
+  ),
+
+  'padding-bottom': (
+    'prefix': 'pb',
+    'values': (
+      'sm': v.$base-padding * 2,
+      'lg': v.$base-padding * 4,
+      'xl': v.$base-padding * 8,
+      'xll': v.$base-padding * 16,
+    ),
+  ),
+
+  'margin': (
+    'prefix': 'm',
+    'values': (
+      'sm': v.$base-margin * 2,
+      'lg': v.$base-margin * 4,
+      'xl': v.$base-margin * 8,
+      'xll': v.$base-margin * 16,
+    ),
+  ),
+  'margin-left': (
+    'prefix': 'ml',
+    'values': (
+      'sm': v.$base-margin * 2,
+      'lg': v.$base-margin * 4,
+      'xl': v.$base-margin * 8,
+      'xll': v.$base-margin * 16,
+    ),
+  ),
+  'margin-top': (
+    'prefix': 'mt',
+    'values': (
+      'sm': v.$base-margin * 2,
+      'lg': v.$base-margin * 4,
+      'xl': v.$base-margin * 8,
+      'xll': v.$base-margin * 16,
+    ),
+  ),
+  'margin-right': (
+    'prefix': 'mr',
+    'values': (
+      'sm': v.$base-margin * 2,
+      'lg': v.$base-margin * 4,
+      'xl': v.$base-margin * 8,
+      'xll': v.$base-margin * 16,
+    ),
+  ),
+
+  'margin-bottom': (
+    'prefix': 'mb',
+    'values': (
+      'sm': v.$base-margin * 2,
+      'lg': v.$base-margin * 4,
+      'xl': v.$base-margin * 8,
+      'xll': v.$base-margin * 16,
+    ),
+  ),
+);
+
+@each $property, $propertyVal in $spacing {
+  $prefix: map.get($propertyVal, 'prefix');
+  $values: map.get($propertyVal, 'values');
+
+  @each $key, $value in $values {
+    .#{$prefix}-#{$key} {
+      #{$property}: $value;
+    }
+  }
+}

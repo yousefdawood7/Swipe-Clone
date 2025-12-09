@@ -1,0 +1,49 @@
+@use 'sass:math' as math; // To Use math.div()
+@use '../abstract/functions' as f;
+@use '../abstract/mixins' as m;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: f.getFont('primary');
+}
+
+p {
+  font-size: f.getFontSize('p');
+  font-weight: 400;
+}
+
+a {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: f.getFont('secondary');
+    font-size: f.getFontSize('h#{$i}');
+    @include m.mQuery(62.5rem) {
+      font-size: math.div(f.getFontSize('h#{$i}'), 1.25);
+    }
+
+    @include m.mQuery(55rem) {
+      font-size: math.div(f.getFontSize('h#{$i}'), 1.5);
+    }
+
+    @if ($i == 1) {
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 2px;
+    } @else {
+      font-weight: 500;
+    }
+  }
+}
+
+button {
+  font-size: f.getFontSize('button') * 1.2;
+  letter-spacing: 1px;
+  font-weight: 600;
+}

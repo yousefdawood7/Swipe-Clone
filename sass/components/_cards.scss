@@ -1,0 +1,83 @@
+@use "../abstract/mixins" as m;
+@use "../abstract/functions" as f;
+
+.card {
+  @include m.flexEl(column, center, flex-start);
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  &__title--border {
+    border-left: f.getColor("tertiary-color") 3px solid;
+    padding-left: 0.8rem;
+  }
+  img {
+    width: 7rem;
+  }
+}
+
+.card__figure {
+  @include m.flexEl(column, flex-start, flex-start);
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 2px 2px 25px rgba($color: #000000, $alpha: 0.25);
+
+  .card--top {
+    @include m.flexEl();
+    position: relative;
+    background-image: linear-gradient(
+      101.33deg,
+      #08209a 0.76%,
+      #6563ff 33.33%,
+      #36c5f0 76.92%,
+      #83e2ff 96.96%
+    );
+    width: 100%;
+    height: 20rem;
+
+    img {
+      width: 35rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: skewY(-5deg);
+      background-color: red;
+      top: 3rem;
+      left: 0;
+      z-index: -1;
+      background-image: inherit;
+    }
+  }
+
+  .card--bottom {
+    padding: 2.5rem;
+    width: 50%;
+    height: 50%;
+
+    .card__images {
+      img {
+        position: absolute;
+        width: 7.5rem;
+        border: 3px solid white;
+        border-radius: 50%;
+        top: 45%;
+
+        background-color: #e8e8e8;
+
+        &:last-of-type {
+          left: 12.5rem;
+        }
+      }
+    }
+    p:last-child {
+      font-weight: bold;
+    }
+  }
+}

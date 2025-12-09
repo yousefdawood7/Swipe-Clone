@@ -1,0 +1,34 @@
+$colors: (
+  "primary-color": #6962f7,
+  "secondary-color": #7000ff,
+  "tertiary-color": #00d4ff,
+  "primary-font": #0a2540,
+  "primary-font--hover": #6d7a88,
+  "font-dark": #000,
+  "font-light": #fff,
+  "font-gray": #adbdcc,
+  "white": #fff,
+  "light-white": #f7f9fc,
+);
+
+$font-sizes: (
+  "h1": 7.5rem,
+  "h2": 5rem,
+  "h3": 4rem,
+  "h4": 3.2rem,
+  "h5": 2.8rem,
+  "h6": 2.2rem,
+  "p": 1.8rem,
+  "button": 1.6rem,
+);
+
+$roboto: "Roboto", sans-serif;
+$telugu: "Anek Telugu", sans-serif;
+
+$fonts: (
+  "primary": $roboto,
+  "secondary": $telugu,
+);
+
+$base-padding: 0.4rem;
+$base-margin: 0.4rem;

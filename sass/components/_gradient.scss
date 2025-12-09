@@ -1,0 +1,24 @@
+@use "../abstract/mixins" as m;
+
+#gradient-canvas {
+  width: 320rem;
+  height: 50rem;
+  transform: rotate(-7deg);
+  position: absolute;
+  top: -35rem;
+  left: -10rem;
+  z-index: -1;
+
+  --gradient-color-1: #ef008f;
+  --gradient-color-2: #6ec3f4;
+  --gradient-color-3: #7038ff;
+  --gradient-color-4: #ffba27;
+
+  @include m.mQuery(62.5rem) {
+    height: 45rem;
+  }
+
+  @include m.mQuery(40rem) {
+    height: 42rem;
+  }
+}

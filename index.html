@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sass/main.scss" />
+    <script defer src="js/gradient.js"></script>
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- Gradient Section -->
+    <canvas id="gradient-canvas"></canvas>
+
+    <!-- Header Section -->
+    <header class="header header--web max-width mt-lg mb-sm pt-sm">
+      <img src="assets/logo-white.svg" alt="Logo Not Found" />
+      <nav class="header__nav">
+        <ul>
+          <li class="nav__list"><a href="#">Products</a></li>
+          <li class="nav__list"><a href="#">Solutions</a></li>
+          <li class="nav__list"><a href="#">Developers</a></li>
+          <li class="nav__list"><a href="#">Resources</a></li>
+          <li class="nav__list"><a href="#">Pricing</a></li>
+        </ul>
+      </nav>
+      <button class="header__sign button p-sm pl-lg pr-lg">Sign in</button>
+    </header>
+    <header class="header header--mobile max-width mt-lg mb-sm pt-sm">
+      <img src="assets/logo-white.svg" alt="Logo Not Found" />
+      <nav class="header__nav header__nav--hidden">
+        <ul>
+          <li class="nav__list"><a href="#">Products</a></li>
+          <li class="nav__list"><a href="#">Solutions</a></li>
+          <li class="nav__list"><a href="#">Developers</a></li>
+          <li class="nav__list"><a href="#">Resources</a></li>
+          <li class="nav__list"><a href="#">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="header__hamburger hamburger">
+        <button></button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero max-width mb-xl">
+      <div class="hero__heading two-column mb-sm">
+        <div class="heading--content col--left">
+          <h1>Payment Infrastructure for the world</h1>
+          <p>
+            Tons of companies all over the world use Swipe's seamless platform
+            to manage their businesses's entire financial transcation
+            infrastructure online
+          </p>
+          <div class="hero__buttons mt-lg">
+            <div class="button--first">
+              <button class="primary-button primary-button--arrow">
+                Start Now
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+            <div class="button--second">
+              <button class="secondary-button secondary-button--arrow">
+                Contact Sales
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="heading--phone col--right">
+          <img src="assets/hero-phone.png" alt="" />
+        </div>
+      </div>
+
+      <div class="hero__companies">
+        <img src="assets/instacart.png" alt="Image Not Found" />
+        <img src="assets/salesforce.png" alt="Image Not Found" />
+        <img src="assets/amazon.png" alt="Image Not Found" />
+        <img src="assets/slack.png" alt="Image Not Found" />
+        <img src="assets/shopify.png" alt="Image Not Found" />
+        <img src="assets/google.png" alt="Image Not Found" />
+        <img src="assets/lyft.png" alt="Image Not Found" />
+        <img src="assets/zoom.png" alt="Image Not Found" />
+      </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="platform mt-xll mb-xll">
+      <div class="platform__heading max-width mb-xll">
+        <div class="platform--title mb-lg">
+          <p class="subtitle subtitle--1 mb-lg">Unified platform</p>
+          <h2>All the payment products you'll ever need</h2>
+        </div>
+        <div class="platform--desc">
+          <div class="platform--columns two-column mb-xl">
+            <div class="col--left">
+              <p>
+                We've got everything you'll need and more to build websites and
+                apps that handle payments, payouts, and much more. Swipe’s
+                products power payments for
+                <a href="#">all kinds of retailers</a>,
+                <a href="#">all kinds of businesses</a>,
+                <a href="#">software platforms & marketplaces</a>, and
+                everything in between.
+              </p>
+            </div>
+            <div class="col--right">
+              <p>
+                We also help companies <a href="#">tackle fraud</a>,
+                <a href="#">issue invoices</a>,
+                <a href="#">send virtual and physical cards</a>,
+                <a href="#">manage financing</a>,
+                <a href="#">wrangle business spend</a>, and much more.
+              </p>
+            </div>
+          </div>
+          <button class="primary-button primary-button--arrow">
+            Start Now
+            <div class="button__arrow">
+              <span class="arrow--1"></span>
+              <span class="arrow--2"></span>
+              <span class="arrow--3"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="platform__contents max-width">
+        <img src="assets/credit-card.png" alt="Image Not Found" />
+        <img src="assets/slack-invoice.png" alt="Image Not Found" />
+        <img src="assets/phone.png" alt="Image Not Found" />
+        <img src="assets/dash.png" alt="Image Not Found" />
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu mt-xll">
+      <div class="two-column max-width">
+        <div class="col--left">
+          <div class="menu__content">
+            <p class="subtitle--2">Designed For Engineers</p>
+            <h2>The world’s best and most intuitive APIs</h2>
+            <p class="mb-lg">
+              We abstract the hard stuff away so your teams don't can focus on
+              building good technology, instead of spending time and money
+              reinventing the wheel.
+            </p>
+            <button class="primary-button primary-button--arrow">
+              Start now
+              <div class="button__arrow">
+                <span class="arrow--1"></span>
+                <span class="arrow--2"></span>
+                <span class="arrow--3"></span>
+              </div>
+            </button>
+          </div>
+          <div class="menu__cards mt-xl">
+            <div class="card">
+              <img
+                class="mb-sm"
+                src="assets/tools-icon.png"
+                alt="Image Not Found"
+              />
+              <h3 class="mb-sm">Tools for all stacks</h3>
+              <p class="secondary-text mb-sm">
+                We offer front end and back end libraries in some of the most
+                widely used technologies, old and new
+              </p>
+              <button class="secondary-button secondary-button--arrow">
+                See libraries
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+            <div class="card">
+              <img
+                class="mb-sm"
+                src="assets/cube-icon.png"
+                alt="Image Not Found"
+              />
+              <h3 class="mb-sm">Custom Integrations</h3>
+              <p class="secondary-text mb-sm">
+                Use integrations for systems like Shopify, WooCommerce,
+                NetSuite, and more.
+              </p>
+              <button class="secondary-button secondary-button--arrow">
+                Explore partners
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="menu__img col--right">
+          <img src="assets/api-code.png" alt="Image Not Found" />
+          <img src="assets/terminal-code.png" alt="Image Not Found" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features mt-xll mb-xll max-width">
+      <div class="features__contents">
+        <p class="subtitle--1">Why Swipe</p>
+        <h2>A tech-first approach to finance</h2>
+        <div class="features__cards mt-xl">
+          <div class="card">
+            <img src="assets/cloud-icon.png" alt="Image Not Found" />
+            <h3 class="mt-lg mb-lg">Efficient Always</h3>
+            <p class="secondary-text">
+              We've optimized every level of the finance stack, from
+              integrations to prebuilt checkout flows - no detail has been
+              spared.
+            </p>
+          </div>
+          <div class="card">
+            <img src="assets/cycle-icon.png" alt="Image Not Found" />
+            <h3 class="mt-lg mb-lg">Fast-Improving</h3>
+            <p class="secondary-text">
+              We make constant updates and improvements to help you stay on the
+              cutting edge of your industry, deploying to production around 20X
+              per day!
+            </p>
+          </div>
+          <div class="card">
+            <img src="assets/shield-icon.png" alt="Image Not Found" />
+            <h3 class="mt-lg mb-lg">Tried and true</h3>
+            <p class="secondary-text">
+              Our systems operate with 100% uptime, with scalability and uptime
+              as a guarantee. Swipe is super duper certified so don't worry
+            </p>
+          </div>
+          <div class="card">
+            <img src="assets/bars-icon.png" alt="Image Not Found" />
+            <h3 class="mt-lg mb-lg">Crazy Optimized</h3>
+            <p class="secondary-text">
+              We use machine learning trained on billions of data points to help
+              optimize all products, from fraud to revenue recovery and more.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Section -->
+    <section class="global mb-xll">
+      <div class="global__contents max-width">
+        <div class="global__desc two-column">
+          <div class="col--left">
+            <p>Global scale</p>
+            <h2>A structure for global businesses</h2>
+            <p>
+              Swipe makes moving money simple, borderless, and programmable -
+              just like the rest of the internet. We have teams all over the
+              world and we process billions and billions of dollars yearly for
+              <a>startups, Fortune 500s, and everything in between.</a>
+            </p>
+          </div>
+          <div class="col--right">
+            <img src="assets/global-graphic.png" alt="Image Not Found" />
+          </div>
+        </div>
+        <div class="global__cards mt-xll">
+          <div class="card">
+            <h3 class="card__title--border mb-lg">250M+</h3>
+            <p class="secondary-text">
+              API requests each day, peaking at 15,000 requests a second.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card__title--border mb-lg">97%</h3>
+            <p class="secondary-text">
+              of US adults have bought from businesses that use Swipe
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card__title--border mb-lg">135%</h3>
+            <p class="secondary-text">
+              currencies and payment methods supported
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card__title--border mb-lg">35%</h3>
+            <p class="secondary-text">
+              countries with local, acquiring, optimizing acceptance rates
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sessions Section -->
+    <section class="sessions mt-xll mb-xll">
+      <div class="two-column max-width mb-xll">
+        <div class="session__content col--left">
+          <p class="subtitle--1">Virtual events</p>
+          <h3>Check out Sessions now!</h3>
+          <p>
+            Swipe Sessions is our annual conference - it's now available to
+            watch on demand! Check it out and become an "internet economy"
+            genius, and see how Swipe can transform the way you do business
+            online.
+          </p>
+
+          <button class="primary-button primary-button--arrow mt-lg">
+            Click Me
+            <div class="button__arrow">
+              <span class="arrow--1"></span>
+              <span class="arrow--2"></span>
+              <span class="arrow--3"></span>
+            </div>
+          </button>
+        </div>
+        <div class="col--right">
+          <div class="card__figure pb-xl">
+            <div class="card--top mb-xll">
+              <img src="assets/swipe-sessions.png" alt="Image Not Found" />
+            </div>
+            <div class="card--bottom">
+              <div class="card__images">
+                <img src="assets/avatar1.png" alt="Image Not Found" />
+                <img src="assets/avatar2.png" alt="Image Not Found" />
+              </div>
+              <div class="card__content mt-lg">
+                <p class="subtitle--1">Keynote</p>
+                <p>Everything you need to know about the internet economy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="session__cards two-column max-width mt-xll">
+        <div class="session__content col--left mt-xll">
+          <h3>What are you waiting for?</h3>
+          <p>
+            Explore <a href="#">Swipe</a> now, or create an account and start
+            accepting payments today! If you need a custom package for your
+            business, let's chat today.
+          </p>
+
+          <button class="primary-button primary-button--arrow mt-lg">
+            Click Me
+            <div class="button__arrow">
+              <span class="arrow--1"></span>
+              <span class="arrow--2"></span>
+              <span class="arrow--3"></span>
+            </div>
+          </button>
+        </div>
+        <div class="col--right">
+          <div class="two-column">
+            <div class="card col--left">
+              <img src="assets/shield-icon.png" alt="" />
+
+              <h3>Always know what you pay</h3>
+              <p class="secondary-text">
+                Integrated per-transaction pricing with no hidden fees.
+              </p>
+              <button class="secondary-button secondary-button--arrow">
+                Click Me
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+            <div class="card col--right">
+              <img src="assets/bars-icon.png" alt="" />
+
+              <h3>Start your integration</h3>
+              <p class="secondary-text">
+                Get up and running with Stripe in as little as 10 minutes.
+              </p>
+              <button class="secondary-button secondary-button--arrow">
+                Click Me
+                <div class="button__arrow">
+                  <span class="arrow--1"></span>
+                  <span class="arrow--2"></span>
+                  <span class="arrow--3"></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-xll">
+      <div class="footer__content max-width mt-xll">
+        <div class="footer__swipe">
+          <img src="assets/logo-dark.svg" alt="Logo Not Found" />
+          <ul>
+            <li>
+              <img src="assets/location-icon.png" alt="Logo Not Found" />
+              <a href="#">Egypt 🇪🇬</a>
+            </li>
+            <li>
+              <img src="assets/comment-icon.png" alt="Logo Not Found" />
+              <a href="#">Arabic (Egypt)</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__product">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="#">Atlas</a></li>
+            <li><a href="#">Billing</a></li>
+            <li><a href="#">Invoicing</a></li>
+            <li><a href="#">Payment</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Idenity</a></li>
+          </ul>
+        </div>
+        <div class="footer__use">
+          <h3>Use Cases</h3>
+          <ul>
+            <li><a href="#">eCommerce</a></li>
+            <li><a href="#">SaaS</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Embedded Finance</a></li>
+            <li><a href="#">Crypto</a></li>
+            <li><a href="#">Create Economy</a></li>
+          </ul>
+        </div>
+        <div class="footer__resource">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+            <li><a href="#">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

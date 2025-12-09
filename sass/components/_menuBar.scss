@@ -1,0 +1,46 @@
+@use '../abstract/mixins' as m;
+
+$bar-width: 3.5rem;
+$bar-height: 0.5rem;
+$bar-gap: 0.5rem;
+
+.hamburger {
+  @include m.flexEl(column);
+  gap: $bar-gap;
+  transition: transform 0.3s;
+  padding: 1rem;
+  z-index: 5;
+  position: fixed;
+  right: 1rem;
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  button,
+  &::before,
+  &::after {
+    width: $bar-width;
+    height: $bar-height;
+    background-color: #252525;
+    border-radius: 1.5rem;
+    transition: transform 0.3s;
+  }
+}
+
+.rotate {
+  transform: rotate(90deg);
+
+  button {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: translateY($bar-height + $bar-gap) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(-$bar-height - $bar-gap) rotate(-45deg);
+  }
+}

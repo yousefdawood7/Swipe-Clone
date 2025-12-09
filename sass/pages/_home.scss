@@ -1,0 +1,450 @@
+@use "../abstract/mixins" as m;
+@use "../abstract/functions" as f;
+
+body {
+  @include m.flexEl(column);
+}
+
+.hero {
+  @include m.mQuery(45rem) {
+    margin-top: 2.5rem;
+  }
+
+  &__heading {
+    .hero__buttons {
+      @include m.flexEl();
+      .secondary-button {
+        color: f.getColor("secondary-color");
+        letter-spacing: -0.25px;
+
+        span {
+          background-color: f.getColor("secondary-color") !important;
+        }
+      }
+    }
+
+    .heading--content {
+      @include m.mQuery(45rem) {
+        width: 100%;
+      }
+
+      p {
+        max-width: 40rem;
+        line-height: 1.5;
+      }
+    }
+
+    .heading--phone {
+      align-items: flex-end;
+      img {
+        width: 70%;
+        transform: translateX(5rem);
+
+        @include m.mQuery(45rem) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__companies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    img {
+      width: 100%;
+    }
+
+    @include m.mQuery(45rem) {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      margin-top: 6rem;
+      img {
+        width: 80%;
+      }
+    }
+
+    @include m.mQuery(35rem) {
+      display: none;
+    }
+  }
+}
+
+.platform {
+  @include m.flexEl(column);
+  background-color: #f7f9fc;
+  width: 100%;
+  padding-top: 5rem;
+  &__heading {
+    .platform--title {
+      max-width: 70rem;
+
+      .subtitle {
+        font-size: 2.3rem;
+      }
+
+      h2 {
+        line-height: 1.2;
+
+        @include m.mQuery(55rem) {
+          width: 90%;
+        }
+      }
+    }
+
+    .platform--desc {
+      .col--left {
+        padding-right: 2.5rem;
+
+        .primary-button {
+          background-color: f.getColor("secondary-color");
+
+          &:hover {
+            background-color: f.getColor("primary-font");
+          }
+        }
+      }
+
+      .col--right {
+        padding-left: 2.5rem;
+        align-self: flex-start;
+      }
+
+      @include m.mQuery(30rem) {
+        button {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+
+    .platform--columns {
+      @include m.mQuery(30rem) {
+        @include m.flexEl(column, flex-start, flex-start);
+        gap: 2.5rem;
+
+        .col--left {
+          width: 100%;
+        }
+
+        .col--right {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &__contents {
+    display: grid;
+    grid-template-areas:
+      "card invoice invoice"
+      "phone invoice invoice"
+      "phone dash dash";
+    gap: 2.5rem;
+
+    img {
+      width: 100%;
+      &[src*="card"] {
+        grid-area: card;
+      }
+
+      &[src*="invoice"] {
+        grid-area: invoice;
+      }
+
+      &[src*="dash"] {
+        grid-area: dash;
+      }
+
+      &[src*="phone"] {
+        grid-area: phone;
+      }
+    }
+
+    @include m.mQuery(30rem) {
+      display: none;
+    }
+  }
+}
+
+.menu {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: f.getColor("primary-font");
+    transform: scale(1.5) skewY(-10deg);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -15rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f9fc;
+    z-index: -2;
+  }
+
+  .two-column {
+    gap: 5rem;
+
+    @include m.mQuery(46rem) {
+      display: block;
+      .col--left {
+        width: 90%;
+      }
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    margin: 1.5rem 0;
+  }
+
+  .primary-button {
+    color: f.getColor("primary-font");
+    background-color: f.getColor("tertiary-color");
+    span {
+      background-color: black !important;
+    }
+  }
+
+  &__cards {
+    @include m.flexEl();
+    flex-wrap: wrap;
+    color: white;
+
+    .card {
+      flex-basis: 45%;
+      margin-right: auto;
+
+      @include m.mQuery(70rem) {
+        flex-basis: 100%;
+        margin-bottom: 1.5rem;
+
+        .secondary-text {
+          width: 90%;
+        }
+      }
+    }
+
+    button {
+      color: f.getColor("tertiary-color");
+      padding-left: 0;
+      font-size: 1.75rem;
+    }
+  }
+
+  &__img {
+    img {
+      border-radius: 1rem;
+      width: 85%;
+      @include m.mQuery(55rem) {
+        width: 100%;
+      }
+
+      @include m.mQuery(46rem) {
+        display: none;
+      }
+    }
+  }
+}
+
+.features {
+  color: black;
+  margin: 40rem 0;
+
+  &__cards {
+    @include m.flexEl();
+    gap: 3.5rem;
+
+    .card {
+      width: 45%;
+    }
+
+    p {
+      color: black;
+    }
+
+    @include m.mQuery(56rem) {
+      flex-wrap: wrap;
+    }
+
+    @include m.mQuery(40rem) {
+      .card {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.global {
+  @include m.flexEl();
+  width: 100%;
+  background-color: f.getColor("primary-font");
+  color: white;
+  position: relative;
+  padding: 12rem 0 10rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    background-color: f.getColor("primary-font");
+    z-index: -1;
+    height: 45rem;
+    width: 120%;
+    top: -10rem;
+    left: 0;
+    transform: translateY(-35%) skewY(-10deg);
+  }
+
+  &__desc {
+    .col--left {
+      & > p:first-of-type,
+      a {
+        color: f.getColor("tertiary-color");
+      }
+    }
+    img {
+      position: absolute;
+      max-width: 90rem;
+      margin-right: auto;
+      opacity: 0.2;
+    }
+  }
+
+  &__cards {
+    color: f.getColor("font-grey");
+    @include m.flexEl();
+    gap: 5.5rem;
+
+    .card {
+      width: 25%;
+    }
+    @include m.mQuery(55rem) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.sessions {
+  @include m.flexEl(column, space-between);
+
+  &__content {
+    h3 {
+      font-weight: bold;
+    }
+
+    p:last-child {
+      line-height: 1.7;
+    }
+  }
+
+  .two-column {
+    gap: 7rem;
+
+    .col--left {
+      width: 45%;
+    }
+  }
+
+  @include m.mQuery(50rem) {
+    & > .two-column:first-child {
+      display: block;
+      margin-bottom: 2.5rem;
+
+      .col--left {
+        width: 90%;
+      }
+
+      .col--right {
+        width: 100%;
+        margin-top: 3.5rem;
+      }
+    }
+
+    & > .two-column:last-child {
+      display: block;
+      .col--left {
+        width: 90%;
+      }
+
+      .col--right {
+        width: 100%;
+      }
+
+      & > .col--right {
+        margin-top: 2.5rem;
+      }
+
+      .card {
+        button {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  @include m.mQuery(35rem) {
+    & > .two-column:last-child {
+      .col--right {
+        .two-column {
+          display: block;
+
+          .col--left {
+            margin-bottom: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .card__figure {
+    @include m.mQuery(56rem) {
+      .card--bottom {
+        width: 100%;
+      }
+    }
+  }
+
+  .session__cards {
+    .col--left {
+      padding: 0;
+    }
+
+    @include m.mQuery(56rem) {
+      margin: 0;
+    }
+  }
+
+  button.primary-button {
+    background-color: f.getColor("primary-color");
+
+    &:hover {
+      background-color: f.getColor("primary-font");
+    }
+  }
+
+  button.secondary-button {
+    color: f.getColor("secondary-color");
+    span {
+      background-color: f.getColor("secondary-color") !important;
+    }
+  }
+}

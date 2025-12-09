@@ -1,0 +1,12 @@
+@mixin flexEl($direction: row, $justifyContent: center, $alignItems: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin mQuery($maxWidth) {
+  @media only screen and (max-width: $maxWidth) {
+    @content;
+  }
+}

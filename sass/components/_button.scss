@@ -1,0 +1,91 @@
+@use "../abstract/variables" as v;
+@use "../abstract/functions" as f;
+@use "../abstract/mixins" as m;
+
+.primary-button,
+.secondary-button {
+  $bar-width: 1rem;
+  $bar-height: 0.3rem;
+  color: f.getColor("font-light");
+  background-color: f.getColor("primary-font");
+  padding: (v.$base-padding * 3) (v.$base-padding * 5);
+  border-radius: 5rem;
+
+  &.primary-button--arrow,
+  &.secondary-button--arrow {
+    @include m.flexEl();
+
+    .button__arrow {
+      position: relative;
+      transform: translateY(0.25rem);
+      @include m.flexEl(column);
+      transition: transform 0.25s;
+      .arrow--1,
+      .arrow--2,
+      .arrow--3 {
+        width: $bar-width;
+        height: $bar-height;
+        background-color: f.getColor("white");
+        border-radius: 0.5rem;
+        margin-left: v.$base-margin * 1.5;
+        transform-origin: right center;
+      }
+
+      .arrow--1 {
+        transform: translateY(0.25rem) rotate(45deg);
+      }
+
+      .arrow--2 {
+        transform: translateY(-0.25rem) rotate(-45deg);
+      }
+
+      .arrow--3 {
+        width: 0;
+        transform: translateX(-20%) translateY(-150%);
+        transition: width 0.15s ease;
+      }
+    }
+
+    @include m.mQuery(35rem) {
+      padding: (v.$base-padding * 2) (v.$base-padding * 3);
+    }
+  }
+
+  &:hover {
+    background-color: f.getColor(primary-font--hover);
+
+    .button__arrow {
+      transform: translateX(0.5rem) translateY(0.25rem);
+
+      .arrow--3 {
+        width: $bar-width;
+      }
+    }
+  }
+
+  transition: background-color 0.25s ease;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: f.getColor("primary-font");
+
+  transition: color 0.25s ease, opacity 0.25s ease;
+
+  .button__arrow {
+    .arrow--1,
+    .arrow--2,
+    .arrow--3 {
+      background-color: f.getColor("font-dark");
+    }
+
+    &::before {
+      background-color: f.getColor("font-dark");
+    }
+  }
+
+  &:hover {
+    opacity: 0.75;
+    background-color: transparent;
+  }
+}

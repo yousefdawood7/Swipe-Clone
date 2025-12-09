@@ -1,0 +1,44 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/functions' as f;
+
+.footer {
+  @include m.flexEl(column);
+  margin-top: auto;
+  background-color: #f7f9fc;
+  width: 100%;
+
+  &__content {
+    @include m.flexEl(row, space-between, flex-start);
+    flex-wrap: wrap;
+
+    h3 {
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    h3,
+    .footer__swipe > img {
+      margin-bottom: 3.5rem;
+    }
+
+    li {
+      margin-bottom: 2rem;
+      @include m.flexEl(row, flex-start, center);
+
+      img {
+        width: 3rem;
+        margin-right: 0.5rem;
+      }
+
+      a {
+        color: black;
+        font-weight: normal;
+
+        &:hover {
+          color: f.getColor('secondary-color');
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
