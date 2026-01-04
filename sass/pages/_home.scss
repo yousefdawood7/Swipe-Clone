@@ -1,5 +1,5 @@
-@use "../abstract/mixins" as m;
-@use "../abstract/functions" as f;
+@use '../abstract/mixins' as m;
+@use '../abstract/functions' as f;
 
 body {
   @include m.flexEl(column);
@@ -14,11 +14,11 @@ body {
     .hero__buttons {
       @include m.flexEl();
       .secondary-button {
-        color: f.getColor("secondary-color");
+        color: f.getColor('secondary-color');
         letter-spacing: -0.25px;
 
         span {
-          background-color: f.getColor("secondary-color") !important;
+          background-color: f.getColor('secondary-color') !important;
         }
       }
     }
@@ -26,6 +26,12 @@ body {
     .heading--content {
       @include m.mQuery(45rem) {
         width: 100%;
+      }
+
+      h1 {
+        @include m.mQuery(22.8rem) {
+          font-size: 4.5rem;
+        }
       }
 
       p {
@@ -97,10 +103,10 @@ body {
         padding-right: 2.5rem;
 
         .primary-button {
-          background-color: f.getColor("secondary-color");
+          background-color: f.getColor('secondary-color');
 
           &:hover {
-            background-color: f.getColor("primary-font");
+            background-color: f.getColor('primary-font');
           }
         }
       }
@@ -137,26 +143,26 @@ body {
   &__contents {
     display: grid;
     grid-template-areas:
-      "card invoice invoice"
-      "phone invoice invoice"
-      "phone dash dash";
+      'card invoice invoice'
+      'phone invoice invoice'
+      'phone dash dash';
     gap: 2.5rem;
 
     img {
       width: 100%;
-      &[src*="card"] {
+      &[src*='card'] {
         grid-area: card;
       }
 
-      &[src*="invoice"] {
+      &[src*='invoice'] {
         grid-area: invoice;
       }
 
-      &[src*="dash"] {
+      &[src*='dash'] {
         grid-area: dash;
       }
 
-      &[src*="phone"] {
+      &[src*='phone'] {
         grid-area: phone;
       }
     }
@@ -178,19 +184,19 @@ body {
   align-items: center;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: f.getColor("primary-font");
+    background-color: f.getColor('primary-font');
     transform: scale(1.5) skewY(-10deg);
     z-index: -1;
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -15rem;
     left: 0;
@@ -217,8 +223,8 @@ body {
   }
 
   .primary-button {
-    color: f.getColor("primary-font");
-    background-color: f.getColor("tertiary-color");
+    color: f.getColor('primary-font');
+    background-color: f.getColor('tertiary-color');
     span {
       background-color: black !important;
     }
@@ -244,7 +250,7 @@ body {
     }
 
     button {
-      color: f.getColor("tertiary-color");
+      color: f.getColor('tertiary-color');
       padding-left: 0;
       font-size: 1.75rem;
     }
@@ -296,16 +302,16 @@ body {
 .global {
   @include m.flexEl();
   width: 100%;
-  background-color: f.getColor("primary-font");
+  background-color: f.getColor('primary-font');
   color: white;
   position: relative;
   padding: 12rem 0 10rem 0;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     background-color: red;
-    background-color: f.getColor("primary-font");
+    background-color: f.getColor('primary-font');
     z-index: -1;
     height: 45rem;
     width: 120%;
@@ -318,7 +324,7 @@ body {
     .col--left {
       & > p:first-of-type,
       a {
-        color: f.getColor("tertiary-color");
+        color: f.getColor('tertiary-color');
       }
     }
     img {
@@ -330,7 +336,7 @@ body {
   }
 
   &__cards {
-    color: f.getColor("font-grey");
+    color: f.getColor('font-grey');
     @include m.flexEl();
     gap: 5.5rem;
 
@@ -434,17 +440,17 @@ body {
   }
 
   button.primary-button {
-    background-color: f.getColor("primary-color");
+    background-color: f.getColor('primary-color');
 
     &:hover {
-      background-color: f.getColor("primary-font");
+      background-color: f.getColor('primary-font');
     }
   }
 
   button.secondary-button {
-    color: f.getColor("secondary-color");
+    color: f.getColor('secondary-color');
     span {
-      background-color: f.getColor("secondary-color") !important;
+      background-color: f.getColor('secondary-color') !important;
     }
   }
 }

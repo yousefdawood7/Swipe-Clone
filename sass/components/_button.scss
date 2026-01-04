@@ -1,13 +1,13 @@
-@use "../abstract/variables" as v;
-@use "../abstract/functions" as f;
-@use "../abstract/mixins" as m;
+@use '../abstract/variables' as v;
+@use '../abstract/functions' as f;
+@use '../abstract/mixins' as m;
 
 .primary-button,
 .secondary-button {
   $bar-width: 1rem;
   $bar-height: 0.3rem;
-  color: f.getColor("font-light");
-  background-color: f.getColor("primary-font");
+  color: f.getColor('font-light');
+  background-color: f.getColor('primary-font');
   padding: (v.$base-padding * 3) (v.$base-padding * 5);
   border-radius: 5rem;
 
@@ -25,7 +25,7 @@
       .arrow--3 {
         width: $bar-width;
         height: $bar-height;
-        background-color: f.getColor("white");
+        background-color: f.getColor('white');
         border-radius: 0.5rem;
         margin-left: v.$base-margin * 1.5;
         transform-origin: right center;
@@ -64,11 +64,19 @@
   }
 
   transition: background-color 0.25s ease;
+
+  @include m.mQuery(22.8rem) {
+    font-size: 1.7rem;
+  }
+
+  @include m.mQuery(20.8rem) {
+    font-size: 1.7rem;
+  }
 }
 
 .secondary-button {
   background-color: transparent;
-  color: f.getColor("primary-font");
+  color: f.getColor('primary-font');
 
   transition: color 0.25s ease, opacity 0.25s ease;
 
@@ -76,11 +84,11 @@
     .arrow--1,
     .arrow--2,
     .arrow--3 {
-      background-color: f.getColor("font-dark");
+      background-color: f.getColor('font-dark');
     }
 
     &::before {
-      background-color: f.getColor("font-dark");
+      background-color: f.getColor('font-dark');
     }
   }
 
