@@ -2,11 +2,10 @@
   "name": "stripe-clone",
   "version": "1.0.0",
   "description": "",
-  "source": "index.html",
+  "source": "./index.html",
   "scripts": {
-    "start": "parcel start",
+    "start": "parcel",
     "build": "parcel build"
-
   },
   "author": "",
   "license": "ISC",
