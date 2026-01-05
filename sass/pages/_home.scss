@@ -341,7 +341,8 @@ body {
     gap: 5.5rem;
 
     .card {
-      width: 25%;
+      // width: 25%;
+      width: 40%;
     }
     @include m.mQuery(55rem) {
       flex-wrap: wrap;
